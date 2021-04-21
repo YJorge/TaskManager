@@ -5,7 +5,4 @@ class UserTest < ActiveSupport::TestCase
     user = create :user
     assert user.persisted?
   end
-  # test "the truth" do
-  #   assert true
-  # end
 end

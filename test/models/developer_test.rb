@@ -5,7 +5,4 @@ class DeveloperTest < ActiveSupport::TestCase
     developer = create :developer
     assert developer.persisted?
   end
-  # test "the truth" do
-  #   assert true
-  # end
 end

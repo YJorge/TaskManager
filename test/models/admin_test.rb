@@ -5,7 +5,4 @@ class AdminTest < ActiveSupport::TestCase
     admin = create :admin
     assert admin.persisted?
   end
-  # test "the truth" do
-  #   assert true
-  # end
 end

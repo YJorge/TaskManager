@@ -5,7 +5,4 @@ class ManagerTest < ActiveSupport::TestCase
     manager = create :manager
     assert manager.persisted?
   end
-  # test "the truth" do
-  #   assert true
-  # end
 end
