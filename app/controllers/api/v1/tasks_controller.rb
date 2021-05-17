@@ -1,11 +1,11 @@
 class Api::V1::TasksController < Api::V1::ApplicationController
-
+  respond_to :json
   def index
-    tasks = Task.all
-                .ransack(ransack_params)
-                .result
-                .page(page)
-                .per(per_page)
+    tasks = Task.all.
+      ransack(ransack_params).
+      result.
+      page(page).
+      per(per_page)
 
     respond_with(tasks, each_serializer: TaskSerializer, root: 'items', meta: build_meta(tasks))
   end
@@ -43,4 +43,3 @@ class Api::V1::TasksController < Api::V1::ApplicationController
     params.require(:task).permit(:name, :description, :author_id, :assignee_id, :state_event)
   end
 end
-
