@@ -8,22 +8,22 @@ export default {
   },
 
   show(id) {
-    const path = routes.apiV1TaskPath(id);
+    const path = routes.apiV1TasksPath(id);
     return FetchHelper.get(path);
   },
 
   update(id, task = {}) {
-    const path = routes.apiV1TaskPath(id);
-    return FetchHelper.post(path, task);
+    const path = routes.apiV1TasksPath(id);
+    return FetchHelper.post(path, { task });
   },
 
   create(task = {}) {
-    const path = routes.apiV1TaskPath();
-    return FetchHelper.post(path, task);
+    const path = routes.apiV1TasksPath();
+    return FetchHelper.post(path, { task });
   },
 
   destroy(id) {
-    const path = routes.apiV1TaskPath(id);
-    return FetchHelper.selete(path);
+    const path = routes.apiV1TasksPath(id);
+    return FetchHelper.delete(path);
   },
 };
