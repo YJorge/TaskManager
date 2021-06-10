@@ -5,16 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Task.connection
 
-admin = Admin.find_or_create_by(first_name: 'admin', last_name: 'admin', email: 'admin@localhost.gen')
-admin.password = 'admin'
-admin.save
-
-60.times do |i|
-  u = [Manager, Developer].sample.new  
-  u.email = "email#{i}@mail.gen" 
-  u.first_name = "FN#{i}" 
-  u.last_name = "LN#{i}"
-  u.password = "#{i}"
+42.step(60,1) do |i|
+  u = Task.new  
+  u.name = "Task #{i}" 
+  u.description = "Do smth #{i} times" 
+  u.author_id = i
+  u.assignee_id = i+1
+  u.state = 'in_development'
   u.save 
 end
