@@ -12,7 +12,7 @@ class Api::V1::ApplicationController < Api::ApplicationController
   end
 
   def ransack_params
-    return params.to_unsafe_h.fetch(:q).merge( { s: RANSACK_DEFAULT_SORT })
+    return params.to_unsafe_h.fetch(:q, { s: RANSACK_DEFAULT_SORT }).merge( { s: RANSACK_DEFAULT_SORT })
 
   end
 
