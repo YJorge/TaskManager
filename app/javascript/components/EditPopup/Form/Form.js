@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { has } from 'ramda';
 
-import UserSelect from '../../UserSelect';
+import UserSelect from 'components/UserSelect';
 import TextField from '@material-ui/core/TextField';
 import useStyles from './useStyles';
 
