@@ -8,7 +8,7 @@ import AddPopup from 'components/AddPopup';
 import EditPopup from 'components/EditPopup';
 import ColumnHeader from 'components/ColumnHeader';
 import TasksRepository from 'repositories/TasksRepository';
-import TaskForm from '../forms/TaskForm';
+import TaskForm from 'forms/TaskForm';
 
 import useTasks from 'hooks/store/useTasks';
 
@@ -61,7 +61,7 @@ const TaskBoard = () => {
         loadColumn(source.fromColumnId);
       })
       .catch((error) => {
-        alert(`Move failed! ${error.message}`);
+        alert(`Moves failed! ${error.message}`);
       });
   };
   const handleTaskCreate = (params) => {

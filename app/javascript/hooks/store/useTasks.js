@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useTasksActions } from '../../../slices/TaskSlice.js';
+import { useTasksActions } from 'slices/TaskSlice.js';
 import { STATES } from 'presenters/TaskPresenter';
 
 const useTasks = () => {
